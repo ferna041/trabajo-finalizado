@@ -1,0 +1,13 @@
+{% extends "plantilla2.html" %}
+{% block content %}
+
+<div class="profile-form-container">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-primary mt-2" href={% url 'green:home.html' %}>Subir</button>
+		
+	</form>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "./plantilla.html" %}
+x="M"
+{% block content %}
+<div class='container col-md-8 col-xl-6'>
+  <h1 class='text-center my-4'>Últimos Posts</h1>
+
+
+  <div class="card shadow border mb-3">
+    <img src={{post.image.url}} class="card-img-top" />
+
+    <div class="card-body">
+      <a href={{ post.author.get_absolute_url }}>
+        <h5 class="card-title">{{post.author}}</h5>
+      </a>
+      <p class="card-text">
+        {{post.description}}
+
+      </p>
+      <p class="card-text">
+        {{post.grado}}
+      </p>
+    {% if  post.asignatura_Media == 'No' %}
+      
+    {% else %}
+      <p class="card-text">
+        {{post.asignatura_Media}}
+      </p>
+    {% endif %}
+    {% if  post.asignatura_Basica == 'No'%}
+
+    {% else %}
+      <p class="card-text">
+      {{post.asignatura_Basica}}
+      </p>
+    {% endif %}
+      
+    <a  href = {{  }}>Ir a la publicación</a>
+    </div>
+
+    <div class='card-footer'>
+      <p class="card-text">
+        <small class="text-muted">{{post.published}}</small>
+      </p>
+    </div>
+
+  </div>
+
+  {% endblock %}
+</div>
+
+
+
+

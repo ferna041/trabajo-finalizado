@@ -1,0 +1,65 @@
+{% extends "./plantilla.html" %}
+x="M"
+{% block content %}
+{% if user.is_authenticated %}
+<div class='container col-md-8 col-xl-6'>
+  <h1 class='text-center my-4'>Últimos Posts</h1>
+
+  {% for post in posts %}
+  <div class="card shadow border mb-3">
+    <img src={{post.image.url}} class="card-img-top" />
+    
+    <div class="card-body">
+      <a href={{ post.author.get_absolute_url }}>
+        <h5 class="card-title">{{post.author}}</h5>
+      </a>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Curso: {{post.grado}}</li>
+        {% if  post.asignatura_Media == 'No' %}
+
+        {% else %}
+        <li class="list-group-item">Asignatura: {{post.asignatura_Media}}</li>
+        {% endif %}
+        {% if  post.asignatura_Basica == 'No'%}
+
+        {% else %}
+        <li class="list-group-item">Asignatura: {{post.asignatura_Basica}}</li>
+        {% endif %}
+  
+      </ul>
+      <p class="card-text">
+        Descripcion: 
+        {{post.description}}
+      </p>
+      {% if  post.contacto == 'whatsapp' %}
+        <a  href = "https://wa.me/{{post.dato_de_contacto}}" > Contacto:+{{post.dato_de_contacto}}
+        </a>
+      {% endif %}
+      {% if  post.contacto == 'instagram' %}
+      <a  href = "https://www.instagram.com/{{post.dato_de_contacto}}" > Contacto:@{{post.dato_de_contacto}}
+      </a>
+      {% endif %}
+      {% if  post.contacto == 'Email' %}
+      <p  href = "" > Contacto: {{post.dato_de_contacto}}
+      </p>
+      {% endif %}
+  
+    </div>
+
+    <div class='card-footer'>
+      <p class="card-text">
+        <small class="text-muted">{{post.published}}</small>
+      </p>
+    </div>
+
+  </div>
+
+  {% endfor %}
+ 
+{% endif %}
+  {% endblock %}
+</div>
+
+
+
+

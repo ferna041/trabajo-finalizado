@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="es">
+  {% include "users/login.html" %}
+<head>
+  <meta charset="utf-8">
+    <title>GreenBooK - Home</title>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+  <!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+</head>
+{% if user.is_authenticated %}
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-0me ">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
+        <img
+          src="https://logos-marcas.com/wp-content/uploads/2020/01/Garnier-Logo.png"
+          class="me-2"
+          height="45"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+        <button
+          type="button"
+          class="btn btn-outline-success btn-rounded"
+          data-mdb-ripple-color="dark"
+         
+        >
+        
+          Basica
+        </button>
+        
+        
+      <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop1"
+        type="button"
+        class="btn btn-primary  btn-roundeddropdown-toggle"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        1°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+        <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_primero' %}>Lenguaje y comunicación </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_primero' %}>Matemáticas</a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_primero' %}>Ciencias Naturales </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Historia_primero' %}>Historia, Geografía y Ciencias Sociales </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_primero' %}>Ingles </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Otros_primero' %}>Otros </a></li>
+        </ul>
+        
+    </div>
+    <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop2"
+        type="button"
+        class="btn btn-secondary  dropdown-togglebtn-rounded"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        2°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop2">
+        <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_segundo' %}>Lenguaje y comunicación </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_segundo' %}>Matemáticas</a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_segundo' %}>Ciencias Naturales </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Historia_segundo' %}>Historia, Geografía y Ciencias Sociales </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_segundo' %}>Ingles </a></li>
+        <li><a class="dropdown-item" href={% url 'green:Basica_Otros_segundo' %}>Ottros </a></li>
+        </ul>
+        
+    </div>
+    <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop3"
+        type="button"
+        class="btn btn-success  dropdown-toggle"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        3°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop3">
+          <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_tercero' %}>Lenguaje y comunicación </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_tercero' %}>Matemáticas</a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_tercero' %}>Ciencias Naturales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Historia_tercero' %}>Historia, Geografía y Ciencias Sociales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_tercero' %}>Ingles </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Otros_tercero' %}>Otros </a></li>
+        </ul>
+        
+    </div>
+    <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop4"
+        type="button"
+        class="btn btn-danger dropdown-toggle"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        4°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop4">
+          <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_cuarto' %}>Lenguaje y comunicación </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_cuarto' %}>Matemáticas</a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_cuarto' %}>Ciencias Naturales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Historia_cuarto' %}>Historia, Geografía y Ciencias Sociales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_cuarto' %}>Ingles </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Otros_cuarto' %}>Otros </a></li>
+        </ul>
+        
+    </div>
+    <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop5"
+        type="button"
+        class="btn btn-warning  dropdown-toggle"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        5°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop5">
+          <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_quinto' %}>Lenguaje y comunicación </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_quinto' %}>Matemáticas</a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_quinto' %}>Ciencias Naturales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Historia_quinto' %}>Historia, Geografía y Ciencias Sociales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_quinto' %}>Ingles </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Otros_quinto' %}>Otros </a></li>
+        </ul>
+        
+    </div>
+    <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop6"
+        type="button"
+        class="btn btn-info  dropdown-toggle"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        6°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop6">
+          <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_sexto' %}>Lenguaje y comunicación </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_sexto' %}>Matemáticas</a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_sexto' %}>Ciencias Naturales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Historia_sexto' %}>Historia, Geografía y Ciencias Sociales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_sexto' %}>Ingles </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Otros_sexto' %}>Otros </a></li>
+        </ul>
+        
+    </div>
+    <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop7"
+        type="button"
+        class="btn btn-light  dropdown-toggle"
+       d
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        7°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop7">
+          <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_septimo' %}>Lenguaje y comunicación </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_septimo' %}>Matemáticas</a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_septimo' %}>Ciencias Naturales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Historia_septimo' %}>Historia, Geografía y Ciencias Sociales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_septimo' %}>Ingles </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Otros_septimo' %}>Otros </a></li>
+        </ul>
+        
+    </div>
+    <div class="btn-group" role="group">
+        <button
+        id="btnGroupVerticalDrop8"
+        type="button"
+        class="btn btn-dark dropdown-toggle"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+        >
+        8°
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop8">
+          <li><a class="dropdown-item" href={% url 'green:Basica_Lenguaje_octavo' %}>Lenguaje y comunicación </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Matematicas_octavo' %}>Matemáticas</a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ciencias_octavo' %}>Ciencias Naturales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Historia_octavo' %}>Historia, Geografía y Ciencias Sociales </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Ingles_octavo' %}>Ingles </a></li>
+          <li><a class="dropdown-item" href={% url 'green:Basica_Otros_octavo' %}>Otros </a></li>
+        </ul>
+        
+    </div>
+    <button
+      type="button"
+      class="btn btn-outline-success btn-rounded"
+      data-mdb-ripple-color="dark"
+    >
+      Media
+    </button>
+    <div class="btn-group" role="group">
+      <button
+      id="btnGroupVerticalDrop9"
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      style="background-color: #ffac44;"
+      data-mdb-toggle="dropdown"
+      aria-expanded="false"
+      >
+      I°
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop9">
+      <li><a class="dropdown-item" href={% url 'green:media_lenguaje_primero' %}>Lenguaje y comunicación </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_matematicas_primero' %}>Matemáticas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_historia_primero' %}>Historia, Geografía y Ciencias Sociales </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_ingles_primero' %}>Ingles </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_fisica_primero' %}>Física </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_quimica_primero' %}>Química </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_biologia_primero' %}>Biología </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_otros_primero' %}>Otros </a></li>
+      </ul>
+      
+  </div>
+  <div class="btn-group" role="group">
+      <button
+      id="btnGroupVerticalDrop10"
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      style="background-color: #4c75a3;"
+      data-mdb-toggle="dropdown"
+      aria-expanded="false"
+      >
+      II°
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop10">
+      <li><a class="dropdown-item" href={% url 'green:media_lenguaje_segundo' %}>Lenguaje y comunicación </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_matematicas_segundo' %}>Matemáticas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_historia_segundo' %}>Historia, Geografía y Ciencias Sociales </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_ingles_segundo' %}>Ingles </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_fisica_segundo' %}>Física </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_quimica_segundo' %}>Química </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_biologia_segundo' %}>Biología </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_otros_segundo' %}>Otros </a></li>
+      </ul>
+      
+  </div>
+  <div class="btn-group" role="group">
+      <button
+      id="btnGroupVerticalDrop11"
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      style="background-color: #0082ca;"
+      data-mdb-toggle="dropdown"
+      aria-expanded="false"
+      >
+      III°
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop11">
+      <li><a class="dropdown-item" href={% url 'green:media_lenguaje_tercero' %}>Lenguaje y comunicación </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_matematicas_tercero' %}>Matemáticas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_matematicasA_tercero' %}>Matemáticas avanzadas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_historia_tercero' %}>Historia, Geografía y Ciencias Sociales </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_ingles_tercero' %}>Ingles </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_fisica_tercero' %}>Física </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_quimica_tercero' %}>Química </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_biologia_tercero' %}>Biología </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_fisicaA_tercero' %}>Física avanzada </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_quimicaA_tercero' %}>Química avanzada</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_biologiaA_tercero' %}>Biología avanzada</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_otros_tercero' %}>Otros </a></li>
+      </ul>
+      
+  </div>
+  <div class="btn-group" role="group">
+      <button
+      id="btnGroupVerticalDrop12"
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      style="background-color: #dd4b39;"
+      data-mdb-toggle="dropdown"
+      aria-expanded="false"
+      >
+      IV°
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop12">
+      <li><a class="dropdown-item" href={% url 'green:media_lenguaje_cuarto' %}>Lenguaje y comunicación </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_matematicas_cuarto' %}>Matemáticas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_matematicasA_cuarto' %}>Matemáticas avanzadas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_historia_cuarto' %}>Historia, Geografía y Ciencias Sociales </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_ingles_cuarto' %}>Ingles </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_fisica_cuarto' %}>Física </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_quimica_cuarto' %}>Química </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_biologia_cuarto' %}>Biología </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_fisicaA_cuarto' %}>Física avanzada </a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_quimicaA_cuarto' %}>Química avanzada</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_biologiaA_cuarto' %}>Biología avanzada</a></li>
+      <li><a class="dropdown-item" href={% url 'green:media_otros_cuarto' %}>Otros </a></li>
+      </ul>
+      
+  </div>
+  <div class="btn-group" role="group">
+      <button
+      id="btnGroupVerticalDrop13"
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      style="background-color: #3b5998;"
+      data-mdb-toggle="dropdown"
+      aria-expanded="false"
+      >
+      PDT
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop13">
+      <li><a class="dropdown-item" href={% url 'green:pdt_lenguaje' %}>Lenguaje y comunicación </a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_matematicas' %}>Matemáticas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_matematicasA' %}>Matemáticas avanzadas</a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_historia' %}>Historia, Geografía y Ciencias Sociales </a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_fisica' %}>Física </a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_quimica' %}>Química </a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_biologia' %}>Biología </a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_fisicaA' %}>Física avanzada </a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_quimicaA' %}>Química avanzada</a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_biologiaA' %}>Biología avanzada</a></li>
+      <li><a class="dropdown-item" href={% url 'green:pdt_otros' %}>Otros </a></li>
+      </ul>
+      
+  </div>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      
+      <div class="d-flex align-items-center me-3">
+        <a href={% url 'users:profile' %}>
+          <img src={{ user.profile_pic.url }} class="rounded-circle" height="30" width='30' alt="" loading="lazy" />
+        </a>
+        
+       
+        
+
+    <!-- Right elements -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+</div>
+
+    
+  </header>
+
+
+
+
+  <div id="content">{% block content %} {% endblock %}
+  </div>
+
+  <div class="position-sticky top-100 start-100 translate-middle btn btn-lg btn-primary rounded-pill">
+    <button type="button" class="btn btn-primary btn-floating" href = "{% url "green:create_post" %}">+
+      <a class="fas fa-plus" href = "{% url "green:create_post" %}">
+      </a>
+      
+    </button>
+  </div>
+{% else %}
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-0me ">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="/">
+        <img
+          src="https://logos-marcas.com/wp-content/uploads/2020/01/Garnier-Logo.png"
+          class="me-2"
+          height="45"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <!-- Left links -->
+     
+        
+        
+        
+    </div>
+</nav>
+
+  {% include "users/login.html" %}
+    <div class="d-flex align-items-center me-3">
+      <div class='container col-md-8 col-xl-6'>
+        <h1 class='text-center my-4'>Inicie sesion o registrese</h1>
+        <h1 class='text-center my-4'> <button type="button" class="btn btn-primary" data-mdb-toggle='modal' data-mdb-target='#loginModal'>
+          Iniciar Sesión
+        </button></h1>
+     
+</div>  
+</body>
+</button>
+{% endif %}
+</html>
