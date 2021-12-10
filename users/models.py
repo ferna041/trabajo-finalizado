@@ -49,7 +49,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     nombre = models.CharField(max_length=15, unique=True)
     ciudad = models.CharField(max_length=30)
     profile_pic = models.ImageField(
-        upload_to='users/', default='users/default.png')
+        upload_to='users/', default='default.png')
     followers = models.ManyToManyField(
         "self",
         related_name='following',

@@ -367,6 +367,10 @@
 
     <!-- Right elements -->
   </div>
+    
+
+
+  </div>
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
@@ -374,13 +378,6 @@
 
     
   </header>
-
-
-
-
-  <div id="content">{% block content %} {% endblock %}
-  </div>
-
   <div class="position-sticky top-100 start-100 translate-middle btn btn-lg btn-primary rounded-pill">
     <button type="button" class="btn btn-primary btn-floating" href = "{% url "green:create_post" %}">+
       <a class="fas fa-plus" href = "{% url "green:create_post" %}">
@@ -388,6 +385,10 @@
       
     </button>
   </div>
+
+
+  <div id="content">{% block content %} {% endblock %}
+
 {% else %}
 <body>
   <!-- Navbar -->
